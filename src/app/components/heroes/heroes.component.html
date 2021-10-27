@@ -2,7 +2,7 @@
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <!-- Con ngFor iteramos la lista recibida desde el componente heroes, evita copiar y pegar todo el código de las cards -->
-  <div class="col" *ngFor="let heroe of heroes">
+  <div class="col animated fadeIn fast" *ngFor="let heroe of heroes; let i = index"> <!-- El index nos ayudará con el id de la RUTA-->
     <div class="card h-100">
       <!-- Hay 2 formas de hacer referencia a los keys del objeto iterado:
         1. Interpolarización: src=" {{ heroe.img }} "
@@ -13,8 +13,13 @@
         <h5 class="card-title">{{ heroe.nombre }}</h5>
         <p class="card-text">
           {{ heroe.bio }}
-        </p>
-        <button type="button" class="btn btn-outline-primary btn-block">
+        </p>        
+        <!-- al agregar / antes de heroe, indicamos que nos regresamos a la raíz,
+        tomamos el index del array heroes para indicar el :id de la ruta -->
+        <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block"> Ver más link...</a> -->
+
+        <!-- Otra forma de agregar la ruta por index desde el boton es con "click" llamando a una función del componente -->
+        <button (click)="verHeroe(i)" type="button" class="btn btn-outline-primary btn-block">
           Ver más...
         </button>
       </div>

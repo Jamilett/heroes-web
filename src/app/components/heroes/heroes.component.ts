@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 // Servicio
 import { HeroesService, Heroe } from 'src/app/services/heroes.service';
 
@@ -15,14 +16,19 @@ export class HeroesComponent implements OnInit {
   /** --------------------- SERVICIOS --------------------- */
   // El servicio se llama dentro del constructor del componente
   // Estructura: scope _nombreServicio: type
-  constructor(private _heroesService: HeroesService) {
-    console.log("Constructor")
+  constructor(private _heroesService: HeroesService, private router: Router) {
   }
 
+  /** --------------------- FUNCIONES --------------------- */
   ngOnInit(): void {
     // Se obtiene la DATA de la función getHeroes 
     this.heroes = this._heroesService.getHeroes();
-    console.log(this.heroes);
+    // console.log(this.heroes);
+  }
+
+  /** Función encargada de navegar a la ruta id:index mediante el módulo ROUTER */
+  verHeroe(idx: number) {
+    this.router.navigate(['/heroe', idx]);
   }
 
 }
