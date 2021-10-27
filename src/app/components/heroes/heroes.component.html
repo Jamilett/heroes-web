@@ -1,20 +1,23 @@
 <h1>Héroes <small> Marvel y DC</small></h1>
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col">
+  <!-- Con ngFor iteramos la lista recibida desde el componente heroes, evita copiar y pegar todo el código de las cards -->
+  <div class="col" *ngFor="let heroe of heroes">
     <div class="card h-100">
-      <img src="assets/img/aquaman.png" class="card-img-top" alt="..." />
+      <!-- Hay 2 formas de hacer referencia a los keys del objeto iterado:
+        1. Interpolarización: src=" {{ heroe.img }} "
+        2. [src] = heroe.img // El src entre [] indica que Angular lo va a manejar
+      -->
+      <img [src] = heroe.img class="card-img-top" [alt]="heroe.nombre" />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">{{ heroe.nombre }}</h5>
         <p class="card-text">
-          This is a longer card with supporting text below as a natural lead-in
-          to additional content. This content is a little bit longer.
+          {{ heroe.bio }}
         </p>
-        <button type="button" class="btn btn-outline-primary btn-block">Ver más...</button>
+        <button type="button" class="btn btn-outline-primary btn-block">
+          Ver más...
+        </button>
       </div>
     </div>
   </div>
-
 </div>
-
-
