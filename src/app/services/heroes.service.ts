@@ -66,6 +66,13 @@ export class HeroesService {
     getHeroes(): Heroe[] {
         return this.heroes;
     }
+
+    /** Función que obtiene el index del elemento seleccionado para usarlo en los parámetros de las rutas (URL) 
+     * @returns index: number
+    */
+    getHeroe(index: number) {
+        return this.heroes[index];
+    }
 }
 
 // Interfaz para indicar la estructura requerida para crear un elemento en el array heroes
