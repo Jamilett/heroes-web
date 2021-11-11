@@ -1,0 +1,15 @@
+<h1>Buscando: <small> {{context}} </small></h1>
+
+<!-- Si no hay resultados de heroes se muestra un "alert" -->
+<div class="row animated fadeIn fast" *ngIf="heroes.length == 0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No existen resultados con el término: {{ context }}
+        </div>
+    </div>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  <app-heroe-tarjeta [heroe]="heroe" [index]="i" *ngFor="let heroe of heroes; let i = index"></app-heroe-tarjeta>
+</div>
+
