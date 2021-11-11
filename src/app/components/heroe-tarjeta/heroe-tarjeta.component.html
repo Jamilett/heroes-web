@@ -1,0 +1,24 @@
+<!-- COMPONENTE HIJO -->
+<div class="col animated fadeIn fast"> <!-- El index nos ayudará con el id de la RUTA-->
+    <div class="card h-100">
+      <!-- Hay 2 formas de hacer referencia a los keys del objeto iterado:
+        1. Interpolarización: src=" {{ heroe.img }} "
+        2. [src] = heroe.img // El src entre [] indica que Angular lo va a manejar
+      -->
+      <img [src] = heroe.img class="card-img-top" [alt]="heroe.nombre" />
+      <div class="card-body">
+        <h5 class="card-title">{{ heroe.nombre }}</h5>
+        <p class="card-text">
+          {{ heroe.bio }}
+        </p>        
+        <!-- al agregar / antes de heroe, indicamos que nos regresamos a la raíz,
+        tomamos el index del array heroes para indicar el :id de la ruta -->
+        <!-- <a [routerLink]="['/heroe', i]" class="btn btn-outline-primary btn-block"> Ver más link...</a> -->
+
+        <!-- Otra forma de agregar la ruta por index desde el boton es con "click" llamando a una función del componente -->
+        <button (click)="verHeroe()" type="button" class="btn btn-outline-primary btn-block">
+          Ver más...
+        </button>
+      </div>
+    </div>
+  </div>

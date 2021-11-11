@@ -73,6 +73,27 @@ export class HeroesService {
     getHeroe(index: number) {
         return this.heroes[index];
     }
+
+    /** Función "buscador" en el navBar para encontrar superheroes que coincidan con las palabras escritas por el user
+     * @returns heroes []
+     */
+    buscarHeroes(context: string) {
+        let heroesArr: Heroe[] = [];
+        // Pasar el context a minúscula para poder comparar correctamente
+        context = context.toLowerCase();
+
+        // Recorrer arreglo de héroes
+        for (let heroe of this.heroes) {
+            // Pasar los nombres del array a minúscula para poder comparar correctamente
+            let nombre = heroe.nombre.toLowerCase();
+            // indexOf regresa la posición del elemento que encuentre, si no encuentra regresará -1
+            if (nombre.indexOf(context) >= 0) {
+                heroesArr.push(heroe);
+            }
+        }
+        console.log(heroesArr);
+        return heroesArr;
+    }
 }
 
 // Interfaz para indicar la estructura requerida para crear un elemento en el array heroes
