@@ -83,11 +83,13 @@ export class HeroesService {
         context = context.toLowerCase();
 
         // Recorrer arreglo de héroes
-        for (let heroe of this.heroes) {
+        for (let i = 0; i < this.heroes.length; i++) {
+            let heroe = this.heroes[i];
             // Pasar los nombres del array a minúscula para poder comparar correctamente
             let nombre = heroe.nombre.toLowerCase();
             // indexOf regresa la posición del elemento que encuentre, si no encuentra regresará -1
             if (nombre.indexOf(context) >= 0) {
+                heroe.idx = i;
                 heroesArr.push(heroe);
             }
         }
@@ -103,4 +105,5 @@ export interface Heroe {
     img: string;
     aparicion: string;
     casa: string;
+    idx?: number;
 };
