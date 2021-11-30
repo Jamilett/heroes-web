@@ -1,0 +1,63 @@
+body {
+    width: 50%;
+}
+
+.header__tittle--bold {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80%;
+}
+
+label {
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 90%;
+    font-weight: bold;
+}
+
+input {
+    display: inline-block;
+    width: 500px;
+    height: 30px;
+    padding-left: 10px;
+    background: #dddcdd;
+    border-color: transparent;
+}
+
+::placeholder {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.checkbox {
+    width: unset;
+    height: unset;
+}
+
+span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 80%;
+}
+
+.terms {
+    font-weight: bold;
+    font-size: 80%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.submit {
+    width: 500px;
+    height: 30px;
+    background: #2772b8;
+    border-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+}
+
+.error {
+    border-color: red;
+    color: red;    
+}

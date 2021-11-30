@@ -39,3 +39,10 @@ body {
 .fadeIn {
     animation-name: fadeIn;
 }
+
+.form {
+    margin-left: 10px;
+    background-color: #2772b8;
+    color: white;
+    font-weight: bold;
+}
